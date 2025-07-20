@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>风太柔</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">风太柔</h1>
+
+    <!-- 搜索栏 -->
+    <div class="search-container">
+      <select id="engine">
+        <option value="https://www.baidu.com/s?wd=">Baidu</option>
+        <option value="https://www.google.com/search?q=">Google</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="请输入搜索内容" />
+      <button onclick="search()">搜索</button>
+    </div>
+
+    <!-- 导航链接区 -->
+    <div class="grid">
+      <a href="https://www.baidu.com" class="card" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/baidu.svg" alt="Baidu">
+        <span>Baidu</span>
+      </a>
+      <a href="https://www.google.com" class="card" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/google.svg" alt="Google">
+        <span>Google</span>
+      </a>
+      <a href="https://github.com" class="card" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/github.svg" alt="GitHub">
+        <span>GitHub</span>
+      </a>
+      <a href="https://bilibili.com" class="card" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/bilibili.svg" alt="Bilibili">
+        <span>Bilibili</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function search() {
+      const engine = document.getElementById('engine').value;
+      const query = document.getElementById('searchInput').value;
+      if (query.trim()) {
+        window.open(engine + encodeURIComponent(query), '_blank');
+      }
+    }
+  </script>
+</body>
+</html>
